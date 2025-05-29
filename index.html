@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JustStreamIt</title>
+        <script src="js/app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+            <div class="flex flex-col my-12 mx-16 md:mx-24 space-y-6 ef-font-oswald text-2xl font-semibold">
+                <div class="border-2 flex items-center justify-center md:grid md:grid-cols-[30%_70%] lg:grid-cols-[20%_80%] md:items-center" style="background-color: rgb(97, 120, 127);">
+                    <img src="images/logo.png" alt="LOGO"  class="py-3 w-[150px] h-auto md:w-[150px] md:pl-5 lg:w-[150px] lg:pl-5">
+                    <p class="hidden md:block md:pl-6 font-thin text-left text-3xl text-white">Vidéos à la demande</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="md:text-left">Meilleur film</p>
+                </div>
+
+                <div class="border-6 grid md:flex">
+                    <img id="best-movie-image" src="images/placeholder.png" alt="best-movie-image"  class="w-full h-auto max-h-[241px] p-3 object-cover col-span-full row-span-1 md:m-1 md:h-60 md:w-72">
+                    <div class="flex flex-col justify-between w-full">
+                        <p id="best-movie-title" class="px-3 text-2xl md:mt-3 md:ml-5"></p>
+                        <p id="best-movie-description" class="px-3 text-xs font-thin md:ml-5 md:text-2xl"></p>
+                        <button
+                            style="background: rgba(250, 11, 11, 1);"
+                            class="w-[91px] h-[40px] my-4 text-white text-xs font-semibold rounded-[25px] mx-auto hover:underline cursor-pointer md:self-end md:mb-10 md:mr-10 md:w-[123px] md:h-[49px] md:text-xl"
+                            id="best-movie-details-button"
+                        >
+                            Détails
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="md:text-left">Films les mieux notés</p>
+                </div>
+
+                <div>
+                    <div id="top-movies-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Les films seront ajoutés dynamiquement ici -->
+                    </div>
+                    <div class="flex justify-center items-center mt-4">
+                        <button id="see-more-button" style="background: rgba(250, 11, 11, 1);" class="w-[214px] h-[36px] mb-4 text-white text-xl font-semibold rounded-[25px] hover:underline cursor-pointer">
+                            Voir plus
+                        </button>
+                        <button id="see-less-button" style="background: rgba(250, 11, 11, 1);" class="w-[214px] h-[36px] mb-4 text-white text-xl font-semibold rounded-[25px] hover:underline cursor-pointer">
+                            Voir moins
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="md:text-left">Mystery</p>
+                </div>
+
+                <div>
+                    <div id="top-mystery-movies-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Les films seront ajoutés dynamiquement ici -->
+                    </div>
+                    <div class="flex justify-center items-center mt-4">
+                        <button id="see-more-button-mystery" style="background: rgba(250, 11, 11, 1);" class="w-[214px] h-[36px] mb-4 text-white text-xl font-semibold rounded-[25px] hover:underline cursor-pointer">
+                            Voir plus
+                        </button>
+                        <button id="see-less-button-mystery" style="background: rgba(250, 11, 11, 1);" class="w-[214px] h-[36px] mb-4 text-white text-xl font-semibold rounded-[25px] hover:underline cursor-pointer">
+                            Voir moins
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="md:text-left">Crime</p>
+                </div>
+
+                <div>
+                    <div id="top-crime-movies-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Les films seront ajoutés dynamiquement ici -->
+                    </div>
+                    <div class="flex justify-center items-center mt-4">
+                        <button id="see-more-button-crime" style="background: rgba(250, 11, 11, 1);" class="w-[214px] h-[36px] mb-4 text-white text-xl font-semibold rounded-[25px] hover:underline cursor-pointer">
+                            Voir plus
+                        </button>
+                        <button id="see-less-button-crime" style="background: rgba(250, 11, 11, 1);" class="w-[214px] h-[36px] mb-4 text-white text-xl font-semibold rounded-[25px] hover:underline cursor-pointer">
+                            Voir moins
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-center md:flex md:items-center">
+                    <p class="md:text-left md:mr-2">Autres :</p>
+                    <select id="category-select" class="border w-full max-w-xs sm:max-w-sm md:w-auto">
+                        <option value="action">Action</option>
+                        <option value="adult">Adult</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="animation">Animation</option>
+                        <option value="biography">Biography</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="crime">Crime</option>
+                        <option value="documentary">Documentary</option>
+                        <option value="drama">Drama</option>
+                        <option value="family">Family</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="film-noir">Film-Noir</option>
+                        <option value="history">History</option>
+                        <option value="horror">Horror</option>
+                        <option value="music">Music</option>
+                        <option value="musical">Musical</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="news">News</option>
+                        <option value="reality-tv">Reality-TV</option>
+                        <option value="romance">Romance</option>
+                        <option value="sci-fi">Sci-Fi</option>
+                        <option value="sport">Sport</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="war">War</option>
+                        <option value="western">Western</option>
+                    </select>
+                </div>
+
+                <div>
+                    <div id="category-movies-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                        <!-- Les films seront insérés ici dynamiquement -->
+                    </div>
+                </div>
+            </div>
+
+
+
+        <div id="movie-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white overflow-y-auto w-11/12 md:w-3/4 lg:w-1/2 max-h-[90vh] p-6 relative">
+                <button id="close-modal" class="absolute top-2 right-2 text-red-600 hover:text-red-800 text-3xl font-bold lg:hidden cursor-pointer">
+                    &#10005;
+                </button>
+                <div id="modal-content">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
